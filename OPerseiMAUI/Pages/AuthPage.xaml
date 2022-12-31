@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<pages:BaseContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                       xmlns:fa="clr-namespace:OPerseiMAUI.FontAwesome"
+                       xmlns:mue="clr-namespace:OPerseiMAUI.Markup.MarkupExtensions"
+                       x:Class="OPerseiMAUI.Pages.AuthPage"
+                       xmlns:vm="clr-namespace:OPerseiMAUI.ViewModels"
+                       x:DataType="vm:AuthPageViewModel"
+                       xmlns:pages="clr-namespace:OPerseiMAUI.Pages"
+                       Title="AuthPage">
+
+    <VerticalStackLayout Margin="25,0" VerticalOptions="Center" Spacing="15">
+        
+        <Grid ColumnDefinitions="*,Auto">
+
+            <Entry Text="{Binding Password}" Placeholder="Password" Grid.Column="0"/>
+
+            <!--<dxe:PasswordEdit Text="{Binding Password}" PlaceholderText="Password" Grid.Column="0" StyleClass="EditorPrimary, PasswordEditorPrimary, EditorRound"/>-->
+
+            <ImageButton Command="{Binding BiometricsRequestedCommand}" IsVisible="{Binding BiometricsAvailable}" Grid.Column="1" Margin="0,-3"
+                         Source="{mue:FontAwesomeIcon Name=Fingerprint, Type=Solid}"/>
+            
+        </Grid>
+
+        <Button Text="Unlock" Command="{Binding AuthCommand}" IsEnabled="{Binding HasPassword}"/>
+
+        <!--<dxe:SimpleButton Text="Unlock" Command="{Binding AuthCommand}" StyleClass="ButtonPrimary, ButtonRound" IsEnabled="{Binding HasPassword, Mode=TwoWay}"
+                              Icon="{FontImage Glyph={x:Static fa:FA.Unlock}, FontFamily={StaticResource FASolid}, Size=Medium}"/>-->
+        
+    </VerticalStackLayout>
+
+    <!--<VerticalStackLayout>
+        <Label 
+            Text="Welcome to .NET MAUI!"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+    </VerticalStackLayout>-->
+    
+</pages:BaseContentPage>
