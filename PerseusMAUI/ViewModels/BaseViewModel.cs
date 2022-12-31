@@ -1,9 +1,9 @@
 ﻿using Acr.UserDialogs;
 using Perseus.Mvvm;
-using OPerseiMAUI.Util;
-using OPerseiMAUI.Services;
+using PerseusMAUI.Util;
+using PerseusMAUI.Services;
 
-namespace OPerseiMAUI.ViewModels
+namespace PerseusMAUI.ViewModels
 {
     public abstract class BaseViewModel : ViewModel
     {

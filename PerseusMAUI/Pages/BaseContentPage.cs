@@ -1,8 +1,8 @@
 ﻿using Microsoft.Maui.Controls.PlatformConfiguration;
 using Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;
-using OPerseiMAUI.ViewModels;
+using PerseusMAUI.ViewModels;
 
-namespace OPerseiMAUI.Pages
+namespace PerseusMAUI.Pages
 {
     public class BaseContentPage : ContentPage
     {

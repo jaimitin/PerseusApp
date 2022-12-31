@@ -1,8 +1,8 @@
-﻿using OPersei.Mvvm;
-using OPerseiMAUI.Util;
+﻿using Perseus.Mvvm;
+using PerseusMAUI.Util;
 using Plugin.Fingerprint.Abstractions;
 
-namespace OPerseiMAUI.ViewModels
+namespace PerseusMAUI.ViewModels
 {
     public sealed class AuthPageViewModel : BaseViewModel
     {

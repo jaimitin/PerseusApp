@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <pages:BaseContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
                        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-                       xmlns:fa="clr-namespace:OPerseiMAUI.FontAwesome"
-                       xmlns:mue="clr-namespace:OPerseiMAUI.Markup.MarkupExtensions"
-                       x:Class="OPerseiMAUI.Pages.AuthPage"
-                       xmlns:vm="clr-namespace:OPerseiMAUI.ViewModels"
+                       xmlns:fa="clr-namespace:PerseusMAUI.FontAwesome"
+                       xmlns:mue="clr-namespace:PerseusMAUI.Markup.MarkupExtensions"
+                       x:Class="PerseusMAUI.Pages.AuthPage"
+                       xmlns:vm="clr-namespace:PerseusMAUI.ViewModels"
                        x:DataType="vm:AuthPageViewModel"
-                       xmlns:pages="clr-namespace:OPerseiMAUI.Pages"
+                       xmlns:pages="clr-namespace:PerseusMAUI.Pages"
                        Title="AuthPage">
 
     <VerticalStackLayout Margin="25,0" VerticalOptions="Center" Spacing="15">
@@ -18,7 +18,7 @@
             <!--<dxe:PasswordEdit Text="{Binding Password}" PlaceholderText="Password" Grid.Column="0" StyleClass="EditorPrimary, PasswordEditorPrimary, EditorRound"/>-->
 
             <ImageButton Command="{Binding BiometricsRequestedCommand}" IsVisible="{Binding BiometricsAvailable}" Grid.Column="1" Margin="0,-3"
-                         Source="{mue:FontAwesomeIcon Name=Fingerprint, Type=Solid}"/>
+                         Source="{mue:FontAwesomeIcon Name=Fingerprint, Type=Solid, Size=Large}" Padding="5"/>
             
         </Grid>
 

@@ -1,4 +1,4 @@
-﻿namespace OPerseiMAUI.Util
+﻿namespace PerseusMAUI.Util
 {
     public static class Constants
     {

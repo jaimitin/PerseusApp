@@ -1,12 +1,12 @@
 ﻿using Acr.UserDialogs;
 using CommunityToolkit.Maui;
-using OPerseiMAUI.FontAwesome;
-using OPerseiMAUI.Pages;
-using OPerseiMAUI.ViewModels;
+using PerseusMAUI.FontAwesome;
+using PerseusMAUI.Pages;
+using PerseusMAUI.ViewModels;
 using Plugin.Fingerprint;
 using Plugin.Fingerprint.Abstractions;
 
-namespace OPerseiMAUI
+namespace PerseusMAUI
 {
     public static class MauiProgram
     {

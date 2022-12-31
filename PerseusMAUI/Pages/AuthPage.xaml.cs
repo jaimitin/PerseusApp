@@ -1,6 +1,6 @@
-using OPerseiMAUI.ViewModels;
+using PerseusMAUI.ViewModels;
 
-namespace OPerseiMAUI.Pages
+namespace PerseusMAUI.Pages
 {
     public partial class AuthPage : BaseContentPage
     {

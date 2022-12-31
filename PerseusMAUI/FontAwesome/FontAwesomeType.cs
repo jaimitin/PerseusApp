@@ -1,4 +1,4 @@
-﻿namespace OPerseiMAUI.FontAwesome
+﻿namespace PerseusMAUI.FontAwesome
 {
     /// <summary>
     /// FontAwesome icon types

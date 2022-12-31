@@ -1,6 +1,6 @@
-﻿using OPerseiMAUI.Pages;
+﻿using PerseusMAUI.Pages;
 
-namespace OPerseiMAUI
+namespace PerseusMAUI
 {
     public partial class App : Application
     {

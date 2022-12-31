@@ -1,4 +1,4 @@
-﻿namespace OPerseiMAUI
+﻿namespace PerseusMAUI
 {
     public partial class MainPage : ContentPage
     {

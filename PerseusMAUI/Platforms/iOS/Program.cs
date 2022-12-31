@@ -1,6 +1,6 @@
 ﻿using UIKit;
 
-namespace OPerseiMAUI.Platforms.iOS
+namespace PerseusMAUI.Platforms.iOS
 {
     public class Program
     {

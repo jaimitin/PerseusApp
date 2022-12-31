@@ -1,4 +1,4 @@
-﻿namespace OPerseiMAUI.FontAwesome
+﻿namespace PerseusMAUI.FontAwesome
 {
     /// <summary>
     /// Helper methods to work with FontAwesome icons
@@ -43,13 +43,13 @@
         /// <returns>
         /// The requested glyph if it was found, otherwise <see cref="string.Empty"/>
         /// </returns>
-        public static string GetGlyph(string iconName)
+        public static string GetGlyph(string? iconName)
         {
             if (!string.IsNullOrEmpty(iconName))
             {
                 if (!iconMap.ContainsKey(iconName))
                 {
-                    string glyph = typeof(FontAwesomeIcons).GetField(iconName)?.GetRawConstantValue()?.ToString();
+                    string? glyph = typeof(FontAwesomeIcons).GetField(iconName)?.GetRawConstantValue()?.ToString();
 
                     if (!string.IsNullOrEmpty(glyph))
                     {

@@ -1,13 +1,14 @@
-﻿using OPerseiMAUI.FontAwesome;
+﻿using PerseusMAUI.FontAwesome;
 using System.ComponentModel;
 
-namespace OPerseiMAUI.Markup.MarkupExtensions
+namespace PerseusMAUI.Markup.MarkupExtensions
 {
     public class FontAwesomeIcon : IMarkupExtension<ImageSource>
     {
         public FontAwesomeType Type { get; set; }
-        public string Name { get; set; }
-        public Color Color { get; set; }
+        public string? Name { get; set; }
+        public Color? Color { get; set; }
+
         [TypeConverter(typeof(FontSizeConverter))]
         public double Size { get; set; }
 

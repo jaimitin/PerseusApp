@@ -1,7 +1,7 @@
 ﻿using Android.App;
 using Android.Runtime;
 
-namespace OPerseiMAUI.Platforms.Android
+namespace PerseusMAUI.Platforms.Android
 {
     [Application]
     public class MainApplication : MauiApplication

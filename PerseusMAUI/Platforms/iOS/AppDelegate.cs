@@ -1,7 +1,7 @@
 ﻿using Foundation;
 using UIKit;
 
-namespace OPerseiMAUI.Platforms.iOS
+namespace PerseusMAUI.Platforms.iOS
 {
     [Register("AppDelegate")]
     public class AppDelegate : MauiUIApplicationDelegate

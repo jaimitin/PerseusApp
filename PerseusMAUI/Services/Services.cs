@@ -1,4 +1,4 @@
-﻿namespace OPerseiMAUI.Services
+﻿namespace PerseusMAUI.Services
 {
     public static class ServiceContainer
     {
