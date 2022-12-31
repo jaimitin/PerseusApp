@@ -5,7 +5,7 @@ namespace PerseusMAUI.Services.Auth
     /// <summary>
     /// Handles application authentication
     /// </summary>
-    public interface IAuthService
+    public interface IAuthService 
     {
         /// <summary>
         /// Authorize an application user
