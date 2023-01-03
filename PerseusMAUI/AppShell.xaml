@@ -7,11 +7,11 @@
        xmlns:local="clr-namespace:PerseusMAUI">
 
     <TabBar>
-        <ShellContent Route="AuthPage" ContentTemplate="{DataTemplate pages:AuthPage}"  />
+        <ShellContent Route="AuthPage" ContentTemplate="{DataTemplate pages:AuthPage}"/>
     </TabBar>
 
     <FlyoutItem Title="Home" Icon="{mue:FontAwesomeIcon Name=House, Type=Solid, Size=Medium}">
-        <ShellContent ContentTemplate="{DataTemplate local:MainPage}" Route="MainPage"/>
+        <ShellContent Route="MainPage" ContentTemplate="{DataTemplate local:MainPage}"/>
     </FlyoutItem>
 
     <MenuItem Text="Lock" Clicked="Lock_Clicked" IconImageSource="{mue:FontAwesomeIcon Name=Lock, Type=Solid, Size=Medium}"/>

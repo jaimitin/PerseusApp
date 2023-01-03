@@ -1,4 +1,5 @@
-﻿using Android.App;
+﻿using Acr.UserDialogs;
+using Android.App;
 using Android.Runtime;
 
 namespace PerseusMAUI.Platforms.Android
@@ -12,6 +13,8 @@ namespace PerseusMAUI.Platforms.Android
 
         protected override MauiApp CreateMauiApp()
         {
+            UserDialogs.Init(this);
+
             return MauiProgram.CreateMauiApp();
         }
     }

@@ -1,4 +1,4 @@
-﻿namespace PerseusMAUI.Models.User
+﻿namespace PerseusMAUI.Models.Auth
 {
     /// <summary>
     /// Represents an application user
@@ -8,12 +8,12 @@
         /// <summary>
         /// User ID
         /// </summary>
-        Guid ID { get; }
+        Guid UserID { get; }
 
         /// <summary>
         /// User name
         /// </summary>
-        string Name { get; }
+        string Username { get; }
 
         /// <summary>
         /// User token

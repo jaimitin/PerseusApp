@@ -2,6 +2,8 @@
 using CommunityToolkit.Maui;
 using PerseusMAUI.FontAwesome;
 using PerseusMAUI.Pages;
+using PerseusMAUI.Services.Auth;
+using PerseusMAUI.Services.Navigation;
 using PerseusMAUI.ViewModels;
 using Plugin.Fingerprint;
 using Plugin.Fingerprint.Abstractions;
@@ -31,6 +33,8 @@ namespace PerseusMAUI
         {
             b.Services.AddSingleton(typeof(IFingerprint), CrossFingerprint.Current);
             b.Services.AddSingleton(typeof(IUserDialogs), UserDialogs.Instance);
+            b.Services.AddSingleton<IAuthService, MockAuthService>();
+            b.Services.AddSingleton<INavigationService, NavigationService>();
 
             return b;
         }

@@ -2,18 +2,21 @@
 using Perseus.Mvvm;
 using PerseusMAUI.Util;
 using PerseusMAUI.Services;
+using PerseusMAUI.Services.Navigation;
 
 namespace PerseusMAUI.ViewModels
 {
     public abstract class BaseViewModel : ViewModel
     {
-        protected BaseViewModel()
+        protected BaseViewModel(IUserDialogs dialogs, INavigationService navigationService)
         {
-            _dialogs = ServiceContainer.Get<IUserDialogs>();
+            _dialogs = dialogs ?? throw new ArgumentNullException(nameof(dialogs));
+            _navigationService = navigationService ?? throw new ArgumentNullException(nameof(navigationService));
         }
 
 
         protected readonly IUserDialogs _dialogs;
+        protected readonly INavigationService _navigationService;
 
 
         #region Lifecycle

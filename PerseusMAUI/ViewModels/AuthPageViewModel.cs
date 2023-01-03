@@ -1,4 +1,9 @@
-﻿using Perseus.Mvvm;
+﻿using Acr.UserDialogs;
+using Perseus.Core.Extensions;
+using Perseus.Mvvm;
+using PerseusMAUI.Models.Auth;
+using PerseusMAUI.Services.Auth;
+using PerseusMAUI.Services.Navigation;
 using PerseusMAUI.Util;
 using Plugin.Fingerprint.Abstractions;
 
@@ -6,69 +11,99 @@ namespace PerseusMAUI.ViewModels
 {
     public sealed class AuthPageViewModel : BaseViewModel
     {
-        public AuthPageViewModel(IFingerprint fingerprint)
+        public AuthPageViewModel(IUserDialogs dialogs, INavigationService navigationService, IFingerprint fingerprint, IAuthService authService) : base(dialogs, navigationService)
         {
             _fingerprint = fingerprint;
+            _authService = authService;
 
             AuthCommand = new Command(OnUnlockTapped);
             BiometricsRequestedCommand = new Command(OnBiometricsRequested);
         }
 
         private readonly IFingerprint _fingerprint;
+        private readonly IAuthService _authService;
 
 
         public Command AuthCommand { get; }
         public Command BiometricsRequestedCommand { get; }
 
 
-        private string password = "";
+        private string? username = string.Empty;
+        public string? Username
+        {
+            get => username;
+            set => Set(ref username, value);
+        }
 
 
-        public string Password
+        private string? password = string.Empty;
+        public string? Password
         {
             get => password;
             set => Set(ref password, value);
         }
 
+
+        [DependsOn(nameof(Username))]
         [DependsOn(nameof(Password))]
-        public bool HasPassword => !string.IsNullOrEmpty(Password);
+        public bool CanUnlock => !Username.IsNullOrEmpty() && !Password.IsNullOrEmpty();
+
 
         public bool BiometricsAvailable => _fingerprint.IsAvailableAsync().Result;
 
 
-        private async void OnUnlockTapped(object obj)
+        public override void OnAppearing()
         {
-            if (Password == "lol")
+            base.OnAppearing();
+
+            if (!Username.IsNullOrEmpty())
             {
-                await Shell.Current.GoToAsync("//MainPage");
+                Username = string.Empty;
             }
-            else
+
+            if (!Password.IsNullOrEmpty())
             {
-                await InvalidateAuth();
+                Password = string.Empty;
             }
         }
 
+
+        private async void OnUnlockTapped(object obj)
+        {
+            await TryAuthAsync();
+        }
+
+        private async Task TryAuthAsync()
+        {
+            if (await _authService.AuthorizeAsync(new AuthRequest(Username, Password)))
+            {
+                await _navigationService.GoToAsync(INavigationService.Routes.MainPage);
+            }
+            else
+            {
+                Username = string.Empty;
+                Password = string.Empty;
+
+                await Alert("Invalid", "The username or password provided was invalid", Constants.Dialogs.Retry);
+            }
+        }
+
+        // This needs to be set up correctly to retrieve the account, but will work like this for now
         private async void OnBiometricsRequested()
         {
-            AuthenticationRequestConfiguration authRequestConfig = new AuthenticationRequestConfiguration("Unlock", "Unlock using biometrics.");
+            AuthenticationRequestConfiguration authRequestConfig = new("Unlock", "Unlock using biometrics.");
             FingerprintAuthenticationResult authResult = await _fingerprint.AuthenticateAsync(authRequestConfig);
             if (authResult.Authenticated)
             {
-                await Shell.Current.GoToAsync("//MainPage");
+                await TryAuthAsync();
             }
             else
             {
                 if (authResult.Status != FingerprintAuthenticationResultStatus.Canceled)
                 {
-                    await InvalidateAuth();
+                    await Alert("Invalid", "The biometrics provided could not be authenticated", Constants.Dialogs.Retry);
                 }
             }
-        }
-
-        private async Task InvalidateAuth()
-        {
-            Password = "";
-            await Alert("", "Nope", Constants.Dialogs.Retry);
         }
     }
 }
