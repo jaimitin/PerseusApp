@@ -5,13 +5,19 @@ using Perseus.App.ViewModels;
 
 namespace Perseus.App.Pages
 {
-    public class BaseContentPage : ContentPage
+    /// <summary>
+    /// Base class for all content pages
+    /// </summary>
+    public abstract class BaseContentPage : ContentPage
     {
+        /// <summary>
+        /// Initialize a new instance of the <see cref="BaseContentPage"/> class
+        /// </summary>
         protected BaseContentPage()
         {
             if(DeviceUtil.IsIOS)
             {
-                _ = On<iOS>().SetUseSafeArea(true);
+                On<iOS>().SetUseSafeArea(true);
             }
         }
 

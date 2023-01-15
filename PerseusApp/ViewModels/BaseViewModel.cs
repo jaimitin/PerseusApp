@@ -5,24 +5,36 @@ using Perseus.Mvvm;
 
 namespace Perseus.App.ViewModels
 {
+    /// <summary>
+    /// Base class for all ViewModels
+    /// </summary>
     public abstract class BaseViewModel : ViewModel
     {
         protected readonly IUserDialogs dialogs;
         protected readonly INavigationService navigationService;
 
+        /// <summary>
+        /// Initialize a new instance of the <see cref="BaseViewModel"/> page and initialize its services
+        /// </summary>
         protected BaseViewModel(IUserDialogs dialogs, INavigationService navigationService)
         {
-            this.dialogs = dialogs ?? throw new ArgumentNullException(nameof(dialogs));
-            this.navigationService = navigationService ?? throw new ArgumentNullException(nameof(navigationService));
+            this.dialogs = dialogs;
+            this.navigationService = navigationService;
         }
 
 
         #region Lifecycle
 
+        /// <summary>
+        /// Occurs when the ViewModel (and page) is appearing on the screen
+        /// </summary>
         public virtual void OnAppearing()
         {
         }
 
+        /// <summary>
+        /// Occurs when the ViewModel (and page) is disappearing from the screen
+        /// </summary>
         public virtual void OnDisappearing()
         {
         }

@@ -49,6 +49,7 @@ namespace Perseus.App
         private static MauiAppBuilder RegisterViewModels(this MauiAppBuilder b)
         {
             b.Services.AddTransient<AuthPageViewModel>();
+            b.Services.AddTransient<MainPageViewModel>();
 
             return b;
         }
@@ -56,6 +57,7 @@ namespace Perseus.App
         private static MauiAppBuilder RegisterPages(this MauiAppBuilder b)
         {
             b.Services.AddTransient<AuthPage>();
+            b.Services.AddTransient<MainPage>();
 
             return b;
         }

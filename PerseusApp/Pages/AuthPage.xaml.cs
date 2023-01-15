@@ -2,12 +2,10 @@ using Perseus.App.ViewModels;
 
 namespace Perseus.App.Pages
 {
-    public partial class AuthPage : BaseContentPage
+    public partial class AuthPage : ViewModelContentPage
     {
-        public AuthPage(AuthPageViewModel vm)
+        public AuthPage(AuthPageViewModel vm) : base(vm)
         {
-            BindingContext = vm;
-
             InitializeComponent();
         }
     }
