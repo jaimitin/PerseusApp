@@ -3,8 +3,13 @@
     /// <summary>
     /// Represents a weight-lifting exercise set
     /// </summary>
-    public interface ISet
+    public interface IExerciseSet
     {
+        /// <summary>
+        /// The weight used in the set
+        /// </summary>
+        double Weight { get; set; }
+
         /// <summary>
         /// The number of repetitions performed in the set
         /// </summary>
@@ -16,8 +21,8 @@
         RPE RPE { get; set; }
 
         /// <summary>
-        /// Any additional notes about the set
+        /// Additional notes about the set
         /// </summary>
-        string Notes { get; set; }
+        string? Notes { get; set; }
     }
 }

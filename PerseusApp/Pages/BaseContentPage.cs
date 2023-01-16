@@ -2,6 +2,7 @@
 using Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;
 using Perseus.App.Util;
 using Perseus.App.ViewModels;
+using System.ComponentModel;
 
 namespace Perseus.App.Pages
 {
@@ -21,9 +22,22 @@ namespace Perseus.App.Pages
             }
         }
 
+        private void OnPropertyChanged(object? sender, PropertyChangedEventArgs e)
+        {
+            if(e.PropertyName == nameof(ContentPage.Content))
+            {
+                if(Content != null)
+                {
+                    Content.Margin = new Thickness(0d, 20d, 0d, 0d);
+                }
+            }
+        }
+
         protected override void OnAppearing()
         {
             base.OnAppearing();
+
+            PropertyChanged += OnPropertyChanged;
 
             if(BindingContext is BaseViewModel vm)
             {
@@ -35,9 +49,11 @@ namespace Perseus.App.Pages
         {
             base.OnDisappearing();
 
+            PropertyChanged -= OnPropertyChanged;
+
             if(BindingContext is BaseViewModel vm)
             {
-                vm.OnAppearing();
+                vm.OnDisappearing();
             }
         }
     }

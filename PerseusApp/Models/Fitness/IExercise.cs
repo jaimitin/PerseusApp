@@ -5,6 +5,6 @@
     /// </summary>
     public interface IExercise
     {
-        string Name { get; }
+        string Name { get; set; }
     }
 }

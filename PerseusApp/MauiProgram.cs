@@ -50,6 +50,7 @@ namespace Perseus.App
         {
             b.Services.AddTransient<AuthPageViewModel>();
             b.Services.AddTransient<MainPageViewModel>();
+            b.Services.AddTransient<WorkoutsPageViewModel>();
 
             return b;
         }
@@ -58,6 +59,7 @@ namespace Perseus.App
         {
             b.Services.AddTransient<AuthPage>();
             b.Services.AddTransient<MainPage>();
+            b.Services.AddTransient<WorkoutsPage>();
 
             return b;
         }

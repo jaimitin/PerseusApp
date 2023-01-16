@@ -12,14 +12,20 @@ namespace Perseus.App.Markup.MarkupExtensions
         [TypeConverter(typeof(FontSizeConverter))]
         public double Size { get; set; }
 
-        public ImageSource ProvideValue(IServiceProvider serviceProvider) => new FontImageSource()
+        public ImageSource ProvideValue(IServiceProvider serviceProvider)
         {
-            FontFamily = Type.GetFontFamily(),
-            Glyph = FontAwesomeUtil.GetGlyph(Name),
-            Color = Color,
-            Size = Size
-        };
+            return new FontImageSource()
+            {
+                FontFamily = Type.GetFontFamily(),
+                Glyph = FontAwesomeUtil.GetGlyph(Name),
+                Color = Color,
+                Size = Size
+            };
+        }
 
-        object IMarkupExtension.ProvideValue(IServiceProvider serviceProvider) => ProvideValue(serviceProvider);
+        object IMarkupExtension.ProvideValue(IServiceProvider serviceProvider)
+        {
+            return ProvideValue(serviceProvider);
+        }
     }
 }

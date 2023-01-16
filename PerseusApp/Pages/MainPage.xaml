@@ -4,16 +4,15 @@
                             xmlns:vm="clr-namespace:Perseus.App.ViewModels"
                             x:DataType="vm:MainPageViewModel"
                             xmlns:pages="clr-namespace:Perseus.App.Pages"
-                            x:Class="Perseus.App.MainPage">
+                            x:Class="Perseus.App.Pages.MainPage"
+                            Title="Home">
 
 
-    <ScrollView>
-        <VerticalStackLayout>
+    <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
 
-            <Label HorizontalTextAlignment="Center" Margin="50" FontSize="50" Text="{Binding Now, StringFormat='{0:T}'}" />
+        <Label FontSize="50" Text="{Binding Now, StringFormat='{0:T}'}" FontAttributes="Bold"/>
 
-        </VerticalStackLayout>
-    </ScrollView>
+    </VerticalStackLayout>
 
 
 </pages:ViewModelContentPage>

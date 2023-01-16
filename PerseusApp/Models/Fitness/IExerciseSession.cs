@@ -16,8 +16,13 @@
         DateTime End { get; set; }
 
         /// <summary>
-        /// The exercises that were performed during the session
+        /// All the weight-lifting exercises that were performed during the session
         /// </summary>
-        List<IExercise> Exercises { get; set; }
+        List<IWeightExercise> Exercises { get; }
+
+        /// <summary>
+        /// All cardio exercises that were performed during the session
+        /// </summary>
+        List<ICardioExercise> Cardio { get; }
     }
 }

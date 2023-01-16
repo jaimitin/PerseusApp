@@ -1,16 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Perseus.App.Models.Fitness
+﻿namespace Perseus.App.Models.Fitness
 {
     /// <summary>
-    /// Represents a weight lifting exercise
+    /// Represents a weight-lifting exercise
     /// </summary>
-    interface IWeightLiftingExercise : IExercise
+    public interface IWeightExercise : IExercise
     {
-        List<ISet> Sets { get; set; }
+        /// <summary>
+        /// Sets performed for the exercise
+        /// </summary>
+        List<IExerciseSet> Sets { get; }
+
+        /// <summary>
+        /// Notes about the form for the exercise
+        /// </summary>
+        string? FormNotes { get; set; }
     }
 }

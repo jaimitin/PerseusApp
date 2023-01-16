@@ -1,7 +1,6 @@
-﻿using Perseus.App.Pages;
-using Perseus.App.ViewModels;
+﻿using Perseus.App.ViewModels;
 
-namespace Perseus.App
+namespace Perseus.App.Pages
 {
     public partial class MainPage : ViewModelContentPage
     {

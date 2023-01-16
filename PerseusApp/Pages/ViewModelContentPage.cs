@@ -15,4 +15,4 @@ namespace Perseus.App.Pages
             BindingContext = viewModel;
         }
     }
-}
+}   
