@@ -10,9 +10,7 @@
         <ShellContent Route="AuthPage" ContentTemplate="{DataTemplate pages:AuthPage}"/>
     </TabBar>
 
-    <TabBar>
-        <ShellContent Route="WorkoutTemplateCreatePage" ContentTemplate="{DataTemplate pages:WorkoutTemplateCreatePage}"/>
-    </TabBar>
+    <ShellContent Route="WorkoutTemplateCreatePage" ContentTemplate="{DataTemplate pages:WorkoutTemplateCreatePage}" Shell.FlyoutItemIsVisible="False"/>
 
     <FlyoutItem Title="Home" Icon="{mue:FontAwesomeIcon Name=House, Type=Solid, Size=Medium}">
         <ShellContent Route="MainPage" ContentTemplate="{DataTemplate pages:MainPage}"/>
