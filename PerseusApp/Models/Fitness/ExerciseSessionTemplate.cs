@@ -1,12 +1,25 @@
 ﻿using Perseus.Core;
+using Perseus.Mvvm;
 
 namespace Perseus.App.Models.Fitness
 {
     /// <inheritdoc cref="IExerciseSessionTemplate"/>
-    public class ExerciseSessionTemplate : PerseusObject, IExerciseSessionTemplate
+    public class ExerciseSessionTemplate : NotificationObject, IExerciseSessionTemplate
     {
-        public string Name { get; set; } = string.Empty;
-        public string? Notes { get; set; }
+        private string? name;
+        public string? Name
+        {
+            get => name;
+            set => Set(ref name, value);
+        }
+
+        private string? notes;
+        public string? Notes
+        {
+            get => notes;
+            set => Set(ref notes, value);
+        }
+
         public IExerciseSession Session { get; set; } = new ExerciseSession();
     }
 }

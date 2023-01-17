@@ -33,6 +33,7 @@
             // These are meant to provide ease of access when calling GoToAsync(), they need to be synced with route creation in AppShell
             public const string AuthPage = $"{absolutePrefix}{nameof(Pages.AuthPage)}";
             public const string MainPage = $"{absolutePrefix}{nameof(Pages.MainPage)}";
+            public const string WorkoutTemplateCreate = $"{absolutePrefix}{nameof(Pages.WorkoutTemplateCreatePage)}";
         }
     }
 }

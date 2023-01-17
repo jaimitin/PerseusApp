@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<pb:ViewModelContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                         xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                         x:Class="Perseus.App.Pages.WorkoutTemplateCreatePage"
+                         x:DataType="vm:WorkoutTemplateCreatePageViewModel"
+                         xmlns:pb="clr-namespace:Perseus.App.Pages.Base"
+                         xmlns:vm="clr-namespace:Perseus.App.ViewModels"
+                         Title="WorkoutPage">
+
+
+    <VerticalStackLayout>
+
+        <Entry Text="{Binding Template.Name}" FontSize="Medium" Placeholder="Name..."/>
+        
+        <Entry Text="{Binding Template.Notes}" FontSize="Small" Placeholder="Notes..."/>
+
+        <Button Text="setup session" IsEnabled="False" Margin="20"/>
+
+    </VerticalStackLayout>
+
+
+</pb:ViewModelContentPage>

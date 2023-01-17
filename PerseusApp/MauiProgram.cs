@@ -28,8 +28,8 @@ namespace Perseus.App
                     f.AddFont("FontAwesomeSolid.otf", FontAwesomeUtil.Solid);
                 })
                 .RegisterServices()
-                .RegisterViewModels()
                 .RegisterPages()
+                .RegisterViewModels()
                 .Build();
         }
 
@@ -46,20 +46,24 @@ namespace Perseus.App
             return b;
         }
 
-        private static MauiAppBuilder RegisterViewModels(this MauiAppBuilder b)
-        {
-            b.Services.AddTransient<AuthPageViewModel>();
-            b.Services.AddTransient<MainPageViewModel>();
-            b.Services.AddTransient<WorkoutsPageViewModel>();
-
-            return b;
-        }
-
         private static MauiAppBuilder RegisterPages(this MauiAppBuilder b)
         {
             b.Services.AddTransient<AuthPage>();
             b.Services.AddTransient<MainPage>();
-            b.Services.AddTransient<WorkoutsPage>();
+            b.Services.AddTransient<WorkoutTemplatesPage>();
+            b.Services.AddTransient<WorkoutTemplateCreatePage>();
+            b.Services.AddTransient<WorkoutHistoryPage>();
+
+            return b;
+        }
+
+        private static MauiAppBuilder RegisterViewModels(this MauiAppBuilder b)
+        {
+            b.Services.AddTransient<AuthPageViewModel>();
+            b.Services.AddTransient<MainPageViewModel>();
+            b.Services.AddTransient<WorkoutTemplatesPageViewModel>();
+            b.Services.AddTransient<WorkoutTemplateCreatePageViewModel>();
+            b.Services.AddTransient<WorkoutHistoryPageViewModel>();
 
             return b;
         }

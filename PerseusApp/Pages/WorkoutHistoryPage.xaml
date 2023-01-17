@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<pb:ViewModelContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                         xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                         xmlns:vm="clr-namespace:Perseus.App.ViewModels"
+                         xmlns:pb="clr-namespace:Perseus.App.Pages.Base"
+                         x:Class="Perseus.App.Pages.WorkoutHistoryPage"
+                         x:DataType="vm:WorkoutHistoryPageViewModel"
+                         Title="WorkoutHistoryPage">
+    
+    
+    <VerticalStackLayout>
+        
+    </VerticalStackLayout>
+    
+    
+</pb:ViewModelContentPage>

@@ -6,6 +6,7 @@ using Perseus.App.Services.Auth;
 using Perseus.App.Services.Navigation;
 using Perseus.App.Util;
 using Plugin.Fingerprint.Abstractions;
+using Perseus.App.ViewModels.Base;
 
 namespace Perseus.App.ViewModels
 {

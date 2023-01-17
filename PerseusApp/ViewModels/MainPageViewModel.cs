@@ -1,12 +1,19 @@
 ﻿using Acr.UserDialogs;
+using Perseus.App.Services.Auth;
 using Perseus.App.Services.Navigation;
+using Perseus.App.ViewModels.Base;
+using System.Text.Json;
 
 namespace Perseus.App.ViewModels
 {
     public class MainPageViewModel : BaseViewModel
     {
-        public MainPageViewModel(IUserDialogs dialogs, INavigationService navigationService) : base(dialogs, navigationService)
+        private readonly IAuthService authService;
+
+        public MainPageViewModel(IUserDialogs dialogs, INavigationService navigationService, IAuthService authService) : base(dialogs, navigationService)
         {
+            this.authService = authService;
+
             Now = DateTime.Now;
 
             Dispatcher.GetForCurrentThread()?.StartTimer(TimeSpan.FromSeconds(1), () =>
@@ -14,6 +21,8 @@ namespace Perseus.App.ViewModels
                 Now = DateTime.Now;
                 return true;
             });
+
+            User = JsonSerializer.Serialize(this.authService.User);
         }
 
         private DateTime now;
@@ -21,6 +30,13 @@ namespace Perseus.App.ViewModels
         {
             get => now;
             set => Set(ref now, value);
+        }
+
+        private string? user;
+        public string? User
+        {
+            get => user;
+            set => Set(ref user, value);
         }
     }
 }

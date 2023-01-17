@@ -1,6 +1,6 @@
-﻿using Perseus.App.ViewModels;
+﻿using Perseus.App.ViewModels.Base;
 
-namespace Perseus.App.Pages
+namespace Perseus.App.Pages.Base
 {
     /// <summary>
     /// Base class for content pages that use a ViewModel to display data

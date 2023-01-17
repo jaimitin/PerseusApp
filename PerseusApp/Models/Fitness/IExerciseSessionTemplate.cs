@@ -5,7 +5,7 @@
         /// <summary>
         /// The name of the template
         /// </summary>
-        string Name { get; set; }
+        string? Name { get; set; }
 
         /// <summary>
         /// Notes about the template

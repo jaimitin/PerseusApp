@@ -3,7 +3,7 @@ using Perseus.App.Services.Navigation;
 using Perseus.App.Util;
 using Perseus.Mvvm;
 
-namespace Perseus.App.ViewModels
+namespace Perseus.App.ViewModels.Base
 {
     /// <summary>
     /// Base class for all ViewModels

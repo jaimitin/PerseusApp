@@ -89,4 +89,22 @@
 		<PackageReference Include="Plugin.Fingerprint" Version="3.0.0-beta.1" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Compile Update="Pages\WorkoutTemplateCreatePage.xaml.cs">
+	    <DependentUpon>WorkoutTemplateCreatePage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Pages\WorkoutTemplatesPage.xaml.cs">
+	    <DependentUpon>WorkoutTemplatesPage.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="Pages\WorkoutHistoryPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\WorkoutTemplateCreatePage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	</ItemGroup>
+
 </Project>

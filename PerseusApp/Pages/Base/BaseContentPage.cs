@@ -1,10 +1,10 @@
 ﻿using Microsoft.Maui.Controls.PlatformConfiguration;
 using Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;
 using Perseus.App.Util;
-using Perseus.App.ViewModels;
+using Perseus.App.ViewModels.Base;
 using System.ComponentModel;
 
-namespace Perseus.App.Pages
+namespace Perseus.App.Pages.Base
 {
     /// <summary>
     /// Base class for all content pages
@@ -24,7 +24,7 @@ namespace Perseus.App.Pages
 
         private void OnPropertyChanged(object? sender, PropertyChangedEventArgs e)
         {
-            if(e.PropertyName == nameof(ContentPage.Content))
+            if(e.PropertyName == nameof(Content))
             {
                 if(Content != null)
                 {

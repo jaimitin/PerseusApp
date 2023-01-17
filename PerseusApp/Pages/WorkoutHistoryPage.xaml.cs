@@ -3,9 +3,9 @@ using Perseus.App.ViewModels;
 
 namespace Perseus.App.Pages
 {
-    public partial class AuthPage : ViewModelContentPage
+    public partial class WorkoutHistoryPage : ViewModelContentPage
     {
-        public AuthPage(AuthPageViewModel vm) : base(vm)
+        public WorkoutHistoryPage(WorkoutHistoryPageViewModel vm) : base(vm)
         {
             InitializeComponent();
         }

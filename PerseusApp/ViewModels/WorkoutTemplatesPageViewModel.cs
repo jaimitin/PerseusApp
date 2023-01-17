@@ -1,13 +1,14 @@
 ﻿using Acr.UserDialogs;
 using Perseus.App.Models.Fitness;
 using Perseus.App.Services.Navigation;
+using Perseus.App.ViewModels.Base;
 using System.Collections.ObjectModel;
 
 namespace Perseus.App.ViewModels
 {
-    public class WorkoutsPageViewModel : BaseViewModel
+    public class WorkoutTemplatesPageViewModel : BaseViewModel
     {
-        public WorkoutsPageViewModel(IUserDialogs dialogs, INavigationService navigationService) : base(dialogs, navigationService)
+        public WorkoutTemplatesPageViewModel(IUserDialogs dialogs, INavigationService navigationService) : base(dialogs, navigationService)
         {
             ExerciseSessionTemplate template = new()
             {
@@ -93,11 +94,13 @@ namespace Perseus.App.ViewModels
             Templates.Add(template);
 
             DeleteTemplateCommand = new Command<ExerciseSessionTemplate>(DeleteTemplate);
+            CreateTemplateCommand = new Command(CreateTemplate);
             TemplateTappedCommand = new Command<ExerciseSessionTemplate>(TemplateTapped);
         }
 
 
         public Command DeleteTemplateCommand { get; }
+        public Command CreateTemplateCommand { get; }
         public Command TemplateTappedCommand { get; }
 
 
@@ -116,6 +119,11 @@ namespace Perseus.App.ViewModels
             {
                 Templates.Remove(template);
             }
+        }
+
+        private async void CreateTemplate()
+        {
+            await navigationService.GoToAsync(INavigationService.Routes.WorkoutTemplateCreate);
         }
 
         private async void TemplateTapped(ExerciseSessionTemplate template)

@@ -5,8 +5,13 @@
        xmlns:mue="clr-namespace:Perseus.App.Markup.MarkupExtensions"
        xmlns:pages="clr-namespace:Perseus.App.Pages">
 
+
     <TabBar>
         <ShellContent Route="AuthPage" ContentTemplate="{DataTemplate pages:AuthPage}"/>
+    </TabBar>
+
+    <TabBar>
+        <ShellContent Route="WorkoutTemplateCreatePage" ContentTemplate="{DataTemplate pages:WorkoutTemplateCreatePage}"/>
     </TabBar>
 
     <FlyoutItem Title="Home" Icon="{mue:FontAwesomeIcon Name=House, Type=Solid, Size=Medium}">
@@ -14,10 +19,15 @@
     </FlyoutItem>
 
     <FlyoutItem Title="Fitness" Icon="{mue:FontAwesomeIcon Name=Dumbbell, Type=Solid, Size=Medium}">
-        <Tab Title="Workouts" Icon="{mue:FontAwesomeIcon Name=Dumbbell, Type=Solid, Size=Medium}">
-            <ShellContent Route="WorkoutsPage" ContentTemplate="{DataTemplate pages:WorkoutsPage}"/>
-            <!--<ShellContent Route="HistoryPage" ContentTemplate="{DataTemplate pages:HistoryPage}"/>-->
+
+        <Tab Title="Templates" Icon="{mue:FontAwesomeIcon Name=Dumbbell, Type=Solid, Size=Medium}">
+            <ShellContent Route="WorkoutTemplatesPage" ContentTemplate="{DataTemplate pages:WorkoutTemplatesPage}"/>
         </Tab>
+
+        <Tab Title="History" Icon="{mue:FontAwesomeIcon Name=ClockRotateLeft, Type=Solid, Size=Medium}">
+            <ShellContent Route="WorkoutHistoryPage" ContentTemplate="{DataTemplate pages:WorkoutHistoryPage}"/>
+        </Tab>
+
     </FlyoutItem>
 
     <MenuItem Text="Lock" Clicked="Lock_Clicked" IconImageSource="{mue:FontAwesomeIcon Name=Lock, Type=Solid, Size=Medium}"/>

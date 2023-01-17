@@ -1,4 +1,5 @@
-﻿using Perseus.App.ViewModels;
+﻿using Perseus.App.Pages.Base;
+using Perseus.App.ViewModels;
 
 namespace Perseus.App.Pages
 {

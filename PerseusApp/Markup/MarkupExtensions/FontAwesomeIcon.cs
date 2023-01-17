@@ -3,6 +3,11 @@ using System.ComponentModel;
 
 namespace Perseus.App.Markup.MarkupExtensions
 {
+
+    // TODO:
+    // Figure out what's wrong with font icons they look super blurry at low sizes
+    // Most likely a MAUI issue
+
     public class FontAwesomeIcon : IMarkupExtension<ImageSource>
     {
         public FontAwesomeType Type { get; set; }
@@ -19,7 +24,8 @@ namespace Perseus.App.Markup.MarkupExtensions
                 FontFamily = Type.GetFontFamily(),
                 Glyph = FontAwesomeUtil.GetGlyph(Name),
                 Color = Color,
-                Size = Size
+                Size = Size,
+                FontAutoScalingEnabled = true
             };
         }
 

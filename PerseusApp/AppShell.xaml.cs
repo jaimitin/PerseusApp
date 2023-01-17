@@ -24,6 +24,7 @@ namespace Perseus.App
         private void RegisterRoutes()
         {
             Routing.RegisterRoute(nameof(AuthPage), typeof(AuthPage));
+            Routing.RegisterRoute(nameof(WorkoutTemplateCreatePage), typeof(WorkoutTemplateCreatePage));
             //Routing.RegisterRoute(nameof(MainPage), typeof(MainPage));
         }
     }
